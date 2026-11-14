@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"todo-api/internals/infrastructure/config"
 	"todo-api/internals/infrastructure/database"
-
 	"github.com/gin-gonic/gin"
 )
 
