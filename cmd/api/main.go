@@ -3,8 +3,10 @@ package main
 import (
 	"log"
 	"net/http"
+	"todo-api/internals/domain/todo/handlers"
 	"todo-api/internals/infrastructure/config"
 	"todo-api/internals/infrastructure/database"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -35,6 +37,8 @@ func main() {
       "database": "connected",
     })
   })
+
+  router.POST("/todos", handlers.CreateTodoHandler(pool))
 
   router.Run(":" + cfg.Port)
   
